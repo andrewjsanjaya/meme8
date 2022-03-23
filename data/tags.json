@@ -1,0 +1,33 @@
+[
+    {
+    "id": 1,
+    "tagName": "Trending"
+  }, {
+    "id": 2,
+    "tagName": "Funny"
+  }, {
+    "id": 3,
+    "tagName": "Animal"
+  }, {
+    "id": 4,
+    "tagName": "Anime"
+  }, {
+    "id": 5,
+    "tagName": "Game"
+  }, {
+    "id": 6,
+    "tagName": "Food"
+  }, {
+    "id": 7,
+    "tagName": "Politic"
+  }, {
+    "id": 8,
+    "tagName": "Darkjoke"
+  }, {
+    "id": 9,
+    "tagName": "Music"
+  }, {
+    "id": 10,
+    "tagName": "Receh"
+  }
+]
