@@ -16,9 +16,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   PostTag.init({
     PostId: DataTypes.INTEGER,
-    TagId: DataTypes.INTEGER
+    TagId:{ 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 10
+    }
   }, {
     sequelize,
+    hooks: {
+      beforeCreate(instance, options) {
+        instance.TagId = 10
+      }
+    },
     modelName: 'PostTag',
   });
   return PostTag;

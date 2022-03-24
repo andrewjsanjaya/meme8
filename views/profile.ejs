@@ -3,15 +3,29 @@
 <%- include('partials/head', {title: 'Profile User'}) %> 
 <body>
    <h1>Profile</h1>
-   <form action="/profile/<%= id %>" method="post">
-    <label>Email</label><br>
-    <input type="text" name="email" id="email"><br>
-    <label>Password</label><br>
-    <input type="password" name="password" id="password"><br>
-    <input type="submit" value="Register"><br>
-    <% if(emailstatus) { %>
-    <p style="color: red;">email sudah terdaftar</p>
-    <% } %>  
-</form>
+   <form action="/user/<%= idUser %>/profile" method="post">
+        <% if(profile) { %>
+        <label>fullName</label><br>
+        <input type="text" name="fullName" id="fullname" value="<%= profile.fullName %>"><br>
+        <label>Birth Date</label><br>
+        <input type="date" name="birthDate" id="birthDate"  value="<%= profile.formatDate%>"><br>
+        <label>Location</label><br>
+        <input type="text" name="location" id="location"  value="<%= profile.location%>"><br>
+        <label>Phone Number</label><br>
+        <input type="text" name="phoneNumber" id="phoneNumber"  value="<%= profile.phoneNumber %>"><br>
+        <input type="text" name="statusProfile" value="update" hidden>
+        <% } else { %>
+        <label>fullName</label><br>
+        <input type="text" name="fullName" id="fullname"><br>
+        <label>Birth Date</label><br>
+        <input type="date" name="birthDate" id="birthDate"><br>
+        <label>Location</label><br>
+        <input type="text" name="location" id="location"><br>
+        <label>Phone Number</label><br>
+        <input type="text" name="phoneNumber" id="phoneNumber"><br>
+        <input type="text" name="statusProfile" value="new" hidden>
+        <% } %> 
+        <input type="submit" value="Save">
+    </form> 
 </body>
 </html>
