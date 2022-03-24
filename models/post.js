@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Post.belongsTo(models.User)
-      Post.hasMany(models.PostTag)
       Post.belongsToMany(models.Tag, {through: models.PostTag})
     }
   }

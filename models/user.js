@@ -20,6 +20,12 @@ module.exports = (sequelize, DataTypes) => {
     role: DataTypes.BOOLEAN,
     status: DataTypes.BOOLEAN
   }, {
+    hooks: {
+      beforeCreate(instance, options) {
+        instance.role = false
+        instance.status = false
+      }
+    },
     sequelize,
     modelName: 'User',
   });
