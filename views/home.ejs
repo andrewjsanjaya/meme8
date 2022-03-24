@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title: 'Home meme8'}) %> 
+<body>
+    <h1>meme8</h1>
+    <a href="/"><button>Log Out</button></a>
+    <a href="/user/<%= id %>"><button>Profile</button></a>
+    <table border="1">
+        <tr>
+          <th>No.</th>
+          <th>Meme</th>
+          <th>Caption</th>
+          <th>Like</th>
+          <th>Tag<th>
+        </tr>
+        <% posts.forEach((el, i) => { %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td><img src="<%= el.url %>"></td>
+                <td><%= el.caption %></td>
+                <td><%= el.like %><a href="/post/<%= el.id %>/like"><span class="glyphicon glyphicon-heart"></a></td>
+                <td>
+                    <% el.Tags.forEach(el => { %>
+                        <a href="home?search=<%= el.tagName %>"><%= el.tagName %></a>
+                    <% }); %>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

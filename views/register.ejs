@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title: 'Register Meme8'}) %> 
+<body>
+    <form action="/register" method="post">
+        <label>Email</label><br>
+        <input type="text" name="email" id="email"><br>
+        <label>Password</label><br>
+        <input type="password" name="password" id="password"><br>
+        <input type="submit" value="Register"><br>
+        <% if(emailstatus) { %>
+        <p style="color: red;">email sudah terdaftar</p>
+        <% } %>  
+    </form>
+</body>
+</html>

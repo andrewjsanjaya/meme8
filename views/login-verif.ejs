@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title: 'Verification'}) %>
+<body>
+  <h1>Verification Page</h1>
+  <form action="/verification" method="get">
+    <label>Input Verification Code:</label><br>
+    <input type="text" name="code" placeholder="Please input your verification code"><br>
+    <input type="number" name="id" value="<%= user %>" hidden>
+    <input type="submit" value="Submit"> 
+    <% if (codeFalse) { %>
+      <p style="color: red;">Wrong Verification Code</p>
+    <% } %>
+  </form>
+</body>
+</html>

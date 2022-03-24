@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title: 'Login meme8'}) %> 
+<body>
+  <h1>Login</h1> 
+  <% if (loginFalse) { %>
+    <p style="color: red;">Email/Password salah</p><br>
+  <% } %>
+  <form action="/login" method="post">
+    <label>Email:</label><br>
+    <input type="text" name="email" placeholder="Please input your email"><br>
+    <label>Password:</label><br>
+    <input type="text" name="password" placeholder="Please input your password"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
